@@ -1,15 +1,15 @@
 def baumSweet(n):
     """
-    Returns the Baum-Sweet value of n
+    Return the Baum-Sweet value of n.
     """
     # Baum-Sweet value of 0 is 1 by definition
     if n == 0:
         return 1
 
-    # binary representation of n
+    # Binary representation of n
     binary = "{0:b}".format(n)
 
-    # check for odd length blocks of consecutive 0's
+    # Check for odd length blocks of consecutive 0's
     length = 0
     for char in binary:
         #
@@ -25,11 +25,12 @@ def baumSweet(n):
 
 def baumSweetSequence(n):
     """
-    Returns the Baum-Sweet sequence from 0 to n in list form.
-    The Baum-Sweet sequence in an infinite automatic sequence of 0's and 1's
-    defined by:
-        b_n = 1     if the binary representation of n contains no blocks of
-                    consecutive 0's of odd length;
+    Return the Baum-Sweet sequence from 0 to n in list form.
+
+    The Baum-Sweet sequence in an infinite automatic sequence of 0's and
+    1's defined by:
+        b_n = 1     if the binary representation of n contains no blocks
+                    of consecutive 0's of odd length;
         b_n = 0     otherwise;
     """
     sequence = []
@@ -39,9 +40,9 @@ def baumSweetSequence(n):
 
 
 def test():
-    print(baumSweetSequence(20))
     answer = [1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0]
-    print(baumSweetSequence(20) == answer)
+    assert baumSweetSequence(20) == answer
+    print('Test passed')
 
 
 test()
