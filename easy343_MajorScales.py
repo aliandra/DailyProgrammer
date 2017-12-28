@@ -39,3 +39,17 @@ def test():
 
 
 test()
+
+
+''' Favorite Response:
+
+def get_note(scale, solfege):
+    chromatic_scale = [
+        'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'
+    ]
+    major_scale = {
+        'Do': 0, 'Re': 2, 'Mi': 4, 'Fa': 5, 'So': 7, 'La': 9, 'Ti': 11
+    }
+    print(chromatic_scale[(chromatic_scale.index(scale) +
+          major_scale[solfege]) % len(chromatic_scale)])
+'''

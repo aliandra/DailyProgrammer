@@ -1,6 +1,12 @@
 def baumSweet(n):
     """
     Return the Baum-Sweet value of n.
+
+    The Baum-Sweet sequence in an infinite automatic sequence of 0's and
+    1's defined by:
+        b_n = 1     if the binary representation of n contains no blocks
+                    of consecutive 0's of odd length;
+        b_n = 0     otherwise;
     """
     # Baum-Sweet value of 0 is 1 by definition
     if n == 0:
@@ -23,15 +29,10 @@ def baumSweet(n):
         return 0
     return 1
 
+
 def baumSweetSequence(n):
     """
     Return the Baum-Sweet sequence from 0 to n in list form.
-
-    The Baum-Sweet sequence in an infinite automatic sequence of 0's and
-    1's defined by:
-        b_n = 1     if the binary representation of n contains no blocks
-                    of consecutive 0's of odd length;
-        b_n = 0     otherwise;
     """
     sequence = []
     for i in range(n + 1):
@@ -46,3 +47,21 @@ def test():
 
 
 test()
+
+
+'''Favorite Response:
+
+def baum_sweet(n):
+    count = 0
+    while n:
+        if n & 1:
+            if count & 1:
+                 return "0"
+        else:
+            count += 1
+        n >>= 1
+    return "1"
+
+def bs_sequence(n):
+    print(", ".join(map(baum_sweet, range(n+1))))
+'''
